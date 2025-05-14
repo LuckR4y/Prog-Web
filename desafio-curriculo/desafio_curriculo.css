@@ -11,6 +11,7 @@ h1 {
     color: #30305e;
     background-color: #97bce0;
     padding: 6px;
+    margin-bottom: 0%;
 }
 
 h2 {
@@ -35,6 +36,8 @@ li {
 .info {
     text-align: center;
     font-size: 15px;
+    background-color: #b0cfee;
+    margin-top: 0%;
 }
 
 a {
@@ -47,4 +50,30 @@ a:hover {
 
 a:visited {
     color: blue;
+}
+
+.menu{
+    margin-bottom: -20px;
+    text-align: center;
+}
+
+.menu li{
+    list-style: none;
+    background-color: #30305e;
+    
+    display: inline-block;
+    padding: 2px;
+}
+
+.menu a{
+    background-color: #beb9b9;
+    color: black;
+    padding: 16px;
+    display: inline-block;
+}
+
+.menu a:hover {
+    background-color: #838282;
+    color: white;
+    text-decoration: none;
 }
