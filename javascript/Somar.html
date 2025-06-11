@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Soma</title>
+
+  <script>
+    // Função que será chamada quando o formulário for enviado
+    function somar() {
+      // Pega o valor digitado no campo de id "num1" e converte para número decimal (float)
+      let n1 = parseFloat(document.getElementById("num1").value);
+
+      // Pega o valor digitado no campo de id "num2" e também converte para número
+      let n2 = parseFloat(document.getElementById("num2").value);
+
+      // Realiza a soma dos dois números
+      let resultado = n1 + n2;
+
+      // Exibe o resultado no parágrafo com id "resultado"
+      document.getElementById("resultado").textContent = "Resultado: " + resultado;
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Formulário com dois campos numéricos e um botão de submit -->
+  <!-- onsubmit chama a função somar() e previne que a página recarregue -->
+  <form onsubmit="event.preventDefault(); somar();">
+    Número 1: <input type="number" id="num1"><br>
+    Número 2: <input type="number" id="num2"><br>
+    <input type="submit" value="Somar">
+  </form>
+
+  <!-- Parágrafo onde o resultado da soma será exibido -->
+  <p id="resultado"></p>
+</body>
+</html>

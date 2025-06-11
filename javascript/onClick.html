@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script language="javascript">
+      // Função que exibe um alerta quando chamada
+      function mensagem() {
+        window.alert("Você clicou neste campo");
+      }
+    </script>
+  </head>
+
+  <body>
+    <h3>Evento OnClick</h3>
+
+    <!-- Link que, ao ser clicado, chama a função mensagem() antes de ir para "exemplo3.html" -->
+    <a href="exemplo3.html" onclick="mensagem()">
+      <i>Link</i> comum
+    </a>
+
+    <form>
+      <!-- Botão do tipo radio. Ao clicar, executa a função mensagem() -->
+      <input type="radio" onclick="mensagem()">
+      <i>Radio</i><p>
+
+      <!-- Caixa de seleção (checkbox). Também chama mensagem() ao ser clicada -->
+      <input type="checkbox" onclick="mensagem()">
+      <i>Checkbox</i><p>
+
+      <!-- Botão de resetar o formulário. Chama mensagem() ao ser clicado -->
+      <input type="reset" onclick="mensagem()"><p>
+
+      <!-- Botão de enviar o formulário. Também chama mensagem() ao ser clicado -->
+      <input type="submit" onclick="mensagem()">
+    </form>
+  </body>
+</html>

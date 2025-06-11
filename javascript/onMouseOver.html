@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script language="javascript">
+      // Função que será chamada quando o mouse passar por cima de um elemento com onmouseover
+      function ativa() {
+        window.alert("Evento OnMouseOver ativado!");
+      }
+    </script>
+  </head>
+
+  <body>
+    <h3>Evento OnMouseOver</h3>
+
+    <!-- Link que dispara a função ativa() quando o mouse passa por cima -->
+    <a href="exemplo9.html" onmouseover="ativa()">
+      Passe o <i>mouse</i> sobre este <i>link</i>
+    </a>
+
+    <form>
+      <!-- Botão de reset que ativa o alerta ao passar o mouse sobre ele -->
+      <input type="reset" value="Botão Reset" onmouseover="ativa()"><p>
+
+      <!-- Botão de submit que ativa o alerta ao passar o mouse sobre ele -->
+      <input type="submit" value="Botão Submit" onmouseover="ativa()">
+    </form>
+  </body>
+</html>

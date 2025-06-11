@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <!-- Início do script JavaScript -->
+    <script language="Javascript">
+      // Função que será chamada quando o campo de email perder o foco
+      function semfoco() {
+        // Mostra um alerta na tela
+        window.alert("O campo EMAIL perdeu o foco");
+      }
+    </script>
+  </head>
+
+  <body>
+    <h3>Evento OnBlur</h3>
+
+    <!-- Início do formulário -->
+    <form>
+      <pre>
+<!-- Campo de entrada para o nome (sem eventos ligados) -->
+Nome: <input id="nome" type="text">
+
+<!-- Campo de email com o evento onblur -->
+<!-- Quando o usuário digitar algo no campo email e clicar fora dele, a função semfoco() será chamada -->
+Email: <input id="email" type="text" onblur="semfoco()">
+
+<!-- Campo de entrada para telefone (sem eventos ligados) -->
+Telefone: <input id="telefone" type="text">
+      </pre>
+    </form>
+  </body>
+</html>

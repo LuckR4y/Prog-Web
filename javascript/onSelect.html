@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script language="javascript">
+      // Função que será executada quando um texto for selecionado em um campo
+      function selecao() {
+        // Exibe um alerta na tela informando que houve uma seleção
+        window.alert("Campo selecionado");
+      }
+    </script>
+  </head>
+
+  <body>
+    <h3>Evento OnSelect</h3>
+
+    <form>
+      <pre>
+<!-- Campo de texto comum -->
+<!-- Quando o usuário selecionar (destacar) parte do texto com o mouse ou teclado, executa a função selecao() -->
+Campo input texto: <input type="text" onselect="selecao()">
+
+<!-- Campo de senha -->
+<!-- Mesmo sendo senha (***), se o usuário selecionar o conteúdo (invisível), a função será chamada -->
+Campo input senha: <input type="password" onselect="selecao()">
+
+<!-- Campo de área de texto (várias linhas) -->
+<!-- Também chama selecao() ao selecionar texto -->
+Campo textarea: <textarea onselect="selecao()"></textarea>
+      </pre>
+    </form>
+  </body>
+</html>

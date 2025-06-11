@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validação de Formulário</title>
+
+  <script>
+    // Função que valida o formulário antes de ser enviado
+    function validarFormulario() {
+      // Pega o valor digitado no campo com id="nome"
+      let nome = document.getElementById("nome").value;
+
+      // Verifica se o campo está vazio
+      if (nome === "") {
+        // Se estiver vazio, exibe um alerta
+        alert("Por favor, preencha o campo nome.");
+
+        // Impede que o formulário seja enviado
+        return false;
+      }
+
+      // Se o nome estiver preenchido, o formulário será enviado normalmente
+      return true;
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Formulário que chama a função de validação ao tentar ser enviado -->
+  <!-- Só envia se a função retornar true -->
+  <form onsubmit="return validarFormulario()">
+
+    <!-- Campo de texto para o nome -->
+    Nome: <input type="text" id="nome" name="nome"><br>
+
+    <!-- Botão para enviar o formulário -->
+    <input type="submit" value="Enviar">
+  </form>
+
+</body>
+</html>

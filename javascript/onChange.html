@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script language="javascript">
+      // Função chamada quando o valor do campo "nome" muda
+      function mudou1() {
+        // Copia o valor digitado no campo "nome" para o campo "completo"
+        document.form1.completo.value = document.form1.nome.value;
+      }
+
+      // Função chamada quando o valor do campo "sobrenome" muda
+      function mudou2() {
+        // Adiciona o sobrenome ao que já está no campo "completo", separado por espaço
+        document.form1.completo.value = document.form1.completo.value + " " +
+          document.form1.sobrenome.value;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h3>Evento OnChange</h3>
+
+    <!-- Formulário com o nome "form1", que será usado nas funções acima -->
+    <form name=form1>
+      <pre>
+<!-- Campo de nome. Quando o conteúdo muda e perde o foco, chama mudou1() -->
+Nome: <input name="nome" type="text" onchange="mudou1()">
+
+<!-- Campo de sobrenome. Quando o conteúdo muda e perde o foco, chama mudou2() -->
+Sobrenome: <input name="sobrenome" type="text" onchange="mudou2()">
+
+<!-- Campo que mostra o nome completo. Está readonly, ou seja, não pode ser editado diretamente -->
+Nome completo: <input name="completo" type="text" readonly>
+      </pre>
+    </form>
+  </body>
+</html>

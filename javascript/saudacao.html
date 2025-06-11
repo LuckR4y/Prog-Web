@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saudação</title>
+
+  <script>
+    // Função que será chamada ao clicar no botão "Saudar"
+    function mostrarSaudacao() {
+      // Pega o valor digitado no campo de texto com id="nome"
+      const nome = document.getElementById("nome").value;
+
+      // Altera o conteúdo do parágrafo com id="mensagem" para exibir a saudação personalizada
+      document.getElementById("mensagem").textContent = "Ola, " + nome + "! Seja bem-vindo!" ;
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Formulário que executa a função mostrarSaudacao() quando for enviado -->
+  <!-- event.preventDefault() evita que a página recarregue ao clicar em "Saudar" -->
+  <form onsubmit="event.preventDefault(); mostrarSaudacao();">
+    Nome: <input type="text" id="nome">
+    <input type="submit" value="Saudar">
+  </form>
+
+  <!-- Parágrafo onde a mensagem personalizada será exibida -->
+  <p id="mensagem"></p>
+</body>
+</html>

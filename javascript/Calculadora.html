@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+
+  <!-- Estilos da página -->
+  <style>
+    /* Estiliza o corpo da página */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    /* Container da calculadora */
+    .calculadora {
+      display: inline-block;
+    }
+
+    /* Estilo do visor da calculadora */
+    input[type="text"] {
+      width: 160px;
+      height: 30px;
+      font-size: 18px;
+      text-align: right;
+      margin-bottom: 5px;
+    }
+
+    /* Grade de botões: 4 colunas com espaço entre eles */
+    .botoes {
+      display: grid;
+      grid-template-columns: repeat(4, 40px);
+      gap: 5px;
+    }
+
+    /* Estilo dos botões */
+    button {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Estrutura visual da calculadora -->
+  <div class="calculadora">
+
+    <!-- Visor da calculadora, desativado para edição direta -->
+    <input type="text" id="display" disabled>
+
+    <!-- Grade de botões com números e operadores -->
+    <div class="botoes">
+      <button onclick="adicionar('1')">1</button>
+      <button onclick="adicionar('2')">2</button>
+      <button onclick="adicionar('3')">3</button>
+      <button onclick="adicionar('/')">/</button>
+
+      <button onclick="adicionar('4')">4</button>
+      <button onclick="adicionar('5')">5</button>
+      <button onclick="adicionar('6')">6</button>
+      <button onclick="adicionar('*')">*</button>
+
+      <button onclick="adicionar('7')">7</button>
+      <button onclick="adicionar('8')">8</button>
+      <button onclick="adicionar('9')">9</button>
+      <button onclick="adicionar('-')">-</button>
+
+      <button onclick="limpar()">C</button>
+      <button onclick="adicionar('0')">0</button>
+      <button onclick="calcular()">=</button>
+      <button onclick="adicionar('+')">+</button>
+    </div>
+  </div>
+
+  <!-- Lógica da calculadora -->
+  <script>
+    // Pega o visor da calculadora
+    const display = document.getElementById('display');
+
+    // Variável de controle para saber se o resultado foi exibido
+    let resultadoExibido = false;
+
+    // Adiciona o valor ao visor
+    function adicionar(valor) {
+      // Se um resultado já foi exibido, limpa o visor antes de continuar
+      if (resultadoExibido) {
+        display.value = '';
+        resultadoExibido = false;
+      }
+      // Adiciona o valor ao final do conteúdo atual
+      display.value += valor;
+    }
+
+    // Limpa o visor
+    function limpar() {
+      display.value = '';
+      resultadoExibido = false;
+    }
+
+    // Calcula o resultado da expressão digitada
+    function calcular() {
+      try {
+        // Usa eval() para avaliar a string como expressão matemática
+        display.value = eval(display.value);
+        resultadoExibido = true; // ativa a flag de que um resultado foi mostrado
+      } catch (e) {
+        // Se a expressão for inválida, mostra "Erro"
+        display.value = 'Erro';
+        resultadoExibido = true;
+      }
+    }
+  </script>
+
+</body>
+</html>
